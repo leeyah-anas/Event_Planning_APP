@@ -8,7 +8,7 @@ registration_router = APIRouter()
 def register_user(reg_in: RegistrationCreate):
     result = registration_service.register_user(reg_in)
     if isinstance(result, str):
-        raise HTTPException(status_code=400, detail="User not Registered for event")
+        raise HTTPException(status_code=400, detail="Event closed")
     return result
 
 @registration_router.patch("/{reg_id}/attend")
